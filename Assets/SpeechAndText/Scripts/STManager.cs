@@ -64,17 +64,43 @@ public class STManager : MonoBehaviour
         }
     }
 
+    public void OnPartialSpeechResult(string resultado)
+    {
+        txtUI.text = resultado;
+    }
+
+    public void StartSpeaking(string mensaje)
+    {
+        TextToSpeech.Instance.StartSpeak(mensaje);
+    }
+
+    public void StopSpeaking(string mensaje)
+    {
+        TextToSpeech.Instance.StopSpeak();
+    }
+
+    public void OnSpeakStart()
+    {
+        Debug.Log("Escuchando...");
+    }
+
+    public void OnSpeakStop()
+    {
+        Debug.Log("Cerrando Escucha...");
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        TextToSpeech.Instance.Setting(lenguaje, 0.5f, 0.8f);
+        SpeechToText.Instance.Setting(lenguaje);
+
+        SpeechToText.Instance.onResultCallback = OnFinalSpeechResult;
+        SpeechToText.Instance.onPartialResultsCallback = OnPartialSpeechResult;
+
+        TextToSpeech.Instance.onStartCallBack = OnSpeakStart;
+        TextToSpeech.Instance.onDoneCallback = OnSpeakStop;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

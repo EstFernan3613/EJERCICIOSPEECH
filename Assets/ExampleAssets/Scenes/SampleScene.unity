@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 210963171}
   - component: {fileID: 210963170}
   - component: {fileID: 210963169}
+  - component: {fileID: 210963172}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -343,19 +344,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 210963170}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 210963167}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &210963170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +383,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210963167}
   m_CullTransparentMesh: 1
+--- !u!114 &210963172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210963167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e840f32afeb7d884087f9b5dd599ed75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1476442572}
+        m_TargetAssemblyTypeName: STManager, Assembly-CSharp
+        m_MethodName: StartListening
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1476442572}
+        m_TargetAssemblyTypeName: STManager, Assembly-CSharp
+        m_MethodName: StopListening
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1476442571}
+  - component: {fileID: 1476442572}
   m_Layer: 0
   m_Name: STManager
   m_TagString: Untagged
@@ -879,6 +911,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1476442572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476442570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f200e5db861ca0b499523a69a745b1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lenguaje: es-ES
+  txtUI: {fileID: 1105248284}
+  voiceCommand:
+  - keyword: Hola
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1476442572}
+          m_TargetAssemblyTypeName: STManager, Assembly-CSharp
+          m_MethodName: StartSpeaking
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 420 lo mas fresa del pedazo
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1808328860
 GameObject:
   m_ObjectHideFlags: 0
